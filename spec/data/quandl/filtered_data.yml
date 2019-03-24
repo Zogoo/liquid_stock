@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.quandl.com/api/v3/datasets/WIKI/AAPL.json?api_key=ywgpyUKX-va7sws8ERZp&collapse=daily&end_date=Jan%205%202018&start_date=Jan%201%202018
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 23 Mar 2019 16:36:57 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '978'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=da39d58e82a5d2859c8fa254005894e1e1553359017; expires=Sun, 22-Mar-20
+        16:36:57 GMT; path=/; domain=.quandl.com; HttpOnly
+      Allow:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS, PATCH
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Etag:
+      - W/"b13f6c3e40d84ee542556194d5899892"
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Rack-Cors:
+      - miss; no-origin
+      X-Ratelimit-Limit:
+      - '50000'
+      X-Ratelimit-Remaining:
+      - '49994'
+      X-Request-Id:
+      - 46774985-76ed-45a4-9a30-e769f567e4d6
+      X-Runtime:
+      - '0.071450'
+      X-Xss-Protection:
+      - 1; mode=block
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4bc1d3c03ce2ae9f-KIX
+    body:
+      encoding: ASCII-8BIT
+      string: '{"dataset":{"id":9775409,"dataset_code":"AAPL","database_code":"WIKI","name":"Apple
+        Inc (AAPL) Prices, Dividends, Splits and Trading Volume","description":"End
+        of day open, high, low, close and volume, dividends and splits, and split/dividend
+        adjusted open, high, low close and volume for Apple Inc. (AAPL). Ex-Dividend
+        is non-zero on ex-dividend dates. Split Ratio is 1 on non-split dates. Adjusted
+        prices are calculated per CRSP (\u003ca href=\"http://www.crsp.com/products/documentation/crsp-calculations\"
+        rel=\"nofollow\" target=\"blank\"\u003ewww.crsp.com/products/documentation/crsp-calculations\u003c/a\u003e)\r\n\r\n\u003cp\u003eThis
+        data is in the public domain. You may copy, distribute, disseminate or include
+        the data in other products for commercial and/or noncommercial purposes.\u003c/p\u003e\r\n\u003cp\u003eThis
+        data is part of Quandl''s Wiki initiative to get financial data permanently
+        into the public domain. Quandl relies on users like you to flag errors and
+        provide data where data is wrong or missing. Get involved: \u003ca href=\"mailto:connect@quandl.com\"
+        rel=\"nofollow\" target=\"blank\"\u003econnect@quandl.com\u003c/a\u003e","refreshed_at":"2018-03-27T21:46:10.101Z","newest_available_date":"2018-03-27","oldest_available_date":"1980-12-12","column_names":["Date","Open","High","Low","Close","Volume","Ex-Dividend","Split
+        Ratio","Adj. Open","Adj. High","Adj. Low","Adj. Close","Adj. Volume"],"frequency":"daily","type":"Time
+        Series","premium":false,"limit":null,"transform":null,"column_index":null,"start_date":"2018-01-01","end_date":"2018-01-05","data":[["2018-01-05",173.44,175.37,173.05,175.0,23016177.0,0.0,1.0,173.44,175.37,173.05,175.0,23016177.0],["2018-01-04",172.54,173.47,172.08,173.03,22211345.0,0.0,1.0,172.54,173.47,172.08,173.03,22211345.0],["2018-01-03",172.53,174.55,171.96,172.23,28819653.0,0.0,1.0,172.53,174.55,171.96,172.23,28819653.0],["2018-01-02",170.16,172.3,169.26,172.26,25048048.0,0.0,1.0,170.16,172.3,169.26,172.26,25048048.0]],"collapse":"daily","order":null,"database_id":4922}}'
+    http_version: 
+  recorded_at: Sat, 23 Mar 2019 16:36:58 GMT
+recorded_with: VCR 4.0.0

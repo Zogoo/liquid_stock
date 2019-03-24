@@ -1,0 +1,30 @@
+{
+  "dataset": {
+    "id": 9775409,
+    "dataset_code": "AAPL",
+    "database_code": "WIKI",
+    "name": "Apple Inc (AAPL) Prices, Dividends, Splits and Trading Volume",
+    "description": "End of day open, high, low, close and volume, dividends and splits, and split/dividend adjusted open, high, low close and volume for Apple Inc. (AAPL). Ex-Dividend is non-zero on ex-dividend dates. Split Ratio is 1 on non-split dates. Adjusted prices are calculated per CRSP (<a href=\"http://www.crsp.com/products/documentation/crsp-calculations\" rel=\"nofollow\" target=\"blank\">www.crsp.com/products/documentation/crsp-calculations</a>)\r\n\r\n<p>This data is in the public domain. You may copy, distribute, disseminate or include the data in other products for commercial and/or noncommercial purposes.</p>\r\n<p>This data is part of Quandl's Wiki initiative to get financial data permanently into the public domain. Quandl relies on users like you to flag errors and provide data where data is wrong or missing. Get involved: <a href=\"mailto:connect@quandl.com\" rel=\"nofollow\" target=\"blank\">connect@quandl.com</a>",
+    "refreshed_at": "2018-03-27T21:46:10.101Z",
+    "newest_available_date": "2018-03-27",
+    "oldest_available_date": "1980-12-12",
+    "column_names": ["Date", "Open", "High", "Low", "Close", "Volume", "Ex-Dividend", "Split Ratio", "Adj. Open", "Adj. High", "Adj. Low", "Adj. Close", "Adj. Volume"],
+    "frequency": "daily",
+    "type": "Time Series",
+    "premium": false,
+    "limit": null,
+    "transform": null,
+    "column_index": null,
+    "start_date": "2018-01-01",
+    "end_date": "2018-01-05",
+    "data": [
+      ["2018-01-05", 173.44, 175.37, 173.05, 175.0, 23016177.0, 0.0, 1.0, 173.44, 175.37, 173.05, 175.0, 23016177.0],
+      ["2018-01-04", 172.54, 173.47, 172.08, 173.03, 22211345.0, 0.0, 1.0, 172.54, 173.47, 172.08, 173.03, 22211345.0],
+      ["2018-01-03", 172.53, 174.55, 171.96, 172.23, 28819653.0, 0.0, 1.0, 172.53, 174.55, 171.96, 172.23, 28819653.0],
+      ["2018-01-02", 170.16, 172.3, 169.26, 172.26, 25048048.0, 0.0, 1.0, 170.16, 172.3, 169.26, 172.26, 25048048.0]
+    ],
+    "collapse": "daily",
+    "order": null,
+    "database_id": 4922
+  }
+}

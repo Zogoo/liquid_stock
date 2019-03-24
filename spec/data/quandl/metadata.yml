@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.quandl.com/api/v3/datasets/WIKI/AAPL/metadata.json?api_key=ywgpyUKX-va7sws8ERZp
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 23 Mar 2019 16:36:55 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '786'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=deb18329373a51a67aae9b432b45bb3bf1553359014; expires=Sun, 22-Mar-20
+        16:36:54 GMT; path=/; domain=.quandl.com; HttpOnly
+      Allow:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS, PATCH
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Etag:
+      - W/"2d32473f7f84849a76d2b7d8855b5c41"
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Rack-Cors:
+      - miss; no-origin
+      X-Ratelimit-Limit:
+      - '50000'
+      X-Ratelimit-Remaining:
+      - '49996'
+      X-Request-Id:
+      - 1995820a-1ae8-4ada-9ad7-0ffb33f0bcb8
+      X-Runtime:
+      - '0.059067'
+      X-Xss-Protection:
+      - 1; mode=block
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4bc1d3b00e91ae5d-KIX
+    body:
+      encoding: ASCII-8BIT
+      string: '{"dataset":{"id":9775409,"dataset_code":"AAPL","database_code":"WIKI","name":"Apple
+        Inc (AAPL) Prices, Dividends, Splits and Trading Volume","description":"End
+        of day open, high, low, close and volume, dividends and splits, and split/dividend
+        adjusted open, high, low close and volume for Apple Inc. (AAPL). Ex-Dividend
+        is non-zero on ex-dividend dates. Split Ratio is 1 on non-split dates. Adjusted
+        prices are calculated per CRSP (\u003ca href=\"http://www.crsp.com/products/documentation/crsp-calculations\"
+        rel=\"nofollow\" target=\"blank\"\u003ewww.crsp.com/products/documentation/crsp-calculations\u003c/a\u003e)\r\n\r\n\u003cp\u003eThis
+        data is in the public domain. You may copy, distribute, disseminate or include
+        the data in other products for commercial and/or noncommercial purposes.\u003c/p\u003e\r\n\u003cp\u003eThis
+        data is part of Quandl''s Wiki initiative to get financial data permanently
+        into the public domain. Quandl relies on users like you to flag errors and
+        provide data where data is wrong or missing. Get involved: \u003ca href=\"mailto:connect@quandl.com\"
+        rel=\"nofollow\" target=\"blank\"\u003econnect@quandl.com\u003c/a\u003e","refreshed_at":"2018-03-27T21:46:10.101Z","newest_available_date":"2018-03-27","oldest_available_date":"1980-12-12","column_names":["Date","Open","High","Low","Close","Volume","Ex-Dividend","Split
+        Ratio","Adj. Open","Adj. High","Adj. Low","Adj. Close","Adj. Volume"],"frequency":"daily","type":"Time
+        Series","premium":false,"database_id":4922}}'
+    http_version: 
+  recorded_at: Sat, 23 Mar 2019 16:36:55 GMT
+recorded_with: VCR 4.0.0
