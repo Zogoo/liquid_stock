@@ -1,7 +1,6 @@
 require './spec/spec_helper.rb'
 
 RSpec.describe Calculate::DrawDown do
-
   describe 'max draw down value by peak value and lowset value' do
     subject do
       described_class.max_drawdown(peak_val, lowest_val)
@@ -22,16 +21,6 @@ RSpec.describe Calculate::DrawDown do
 
       it 'will return percentage value' do
         is_expected.to eq(-1.5)
-      end
-    end
-
-    # TODO: Need clearification: Why this drawdown is excluded from sample??
-    context 'when give portfolios result with (173.47 - 172.08) / 172.08 = -0.8' do
-      let(:peak_val) { 173.47 }
-      let(:lowest_val) { 172.08 }
-
-      it 'will return percentage value' do
-        is_expected.to eq(-0.8)
       end
     end
 
@@ -60,7 +49,6 @@ RSpec.describe Calculate::DrawDown do
       end
     end
 
-    # TODO: To check order is really high -> lowest portfolios
     context 'when portfolios for max drawdown fesult with (172.3 - 169.26) / 172.3 = -1.8' do
       let(:portfolios) { [172.3, 169.26, 174.55, 171.96, 173.47, 172.08, 175.37, 173.05] }
 
@@ -107,7 +95,50 @@ RSpec.describe Calculate::DrawDown do
       end
     end
 
-    context 'when give portfolios' do
+    context 'when array of portfolios with 3 drawdown' do
+      let(:portfolios) { [172.3, 169.26, 174.55, 171.96, 173.47, 172.08, 175.37, 173.05] }
+
+      it 'will return array of drawdown hash' do
+        is_expected.to be_a(Array)
+      end
+
+      it 'will return one array of draw down' do
+        expect(subject.compact.size).to eq(3)
+      end
+
+      it 'will return hash values with drawdown' do
+        is_expected.to satisfy do |value|
+          value.compact.all? { |d_hash| !d_hash[:loss].nil? }
+        end
+      end
+    end
+
+    context 'when array of portfolios with 3 drawdown' do
+      let(:portfolios) {
+        [
+          170.16, 172.3, 169.26, 172.26,
+          172.53, 174.55, 171.96, 172.23,
+          172.54, 173.47, 172.08, 173.03,
+          173.44, 175.37, 173.05, 175.0
+        ]
+      }
+
+      it 'will return array of drawdown hash' do
+        is_expected.to be_a(Array)
+      end
+
+      it 'will return one array of draw down' do
+        expect(subject.compact.size).to eq(3)
+      end
+
+      it 'will return hash values with drawdown' do
+        is_expected.to satisfy do |value|
+          value.compact.all? { |d_hash| !d_hash[:loss].nil? }
+        end
+      end
+    end
+
+    context 'when array of portfolios with 2 drawdown' do
       let(:portfolios) { [100, 150, 90, 120, 80, 200] }
 
       it 'will return array of drawdown hash' do
@@ -120,12 +151,12 @@ RSpec.describe Calculate::DrawDown do
 
       it 'will return hash values with drawdown' do
         is_expected.to satisfy do |value|
-          value.compact.all?{ |d_hash| !d_hash[:loss].nil? }
+          value.compact.all? { |d_hash| !d_hash[:loss].nil? }
         end
       end
     end
 
-    context 'when give portfolios ' do
+    context 'when array of portfolios with 5 drawdown' do
       let(:portfolios) { [100, 150, 90, 120, 160, 150, 125, 100, 75] }
 
       it 'will return array of drawdown hash' do
@@ -133,12 +164,12 @@ RSpec.describe Calculate::DrawDown do
       end
 
       it 'will return one array of draw down' do
-        expect(subject.compact.size).to eq(2)
+        expect(subject.compact.size).to eq(5)
       end
 
       it 'will return hash values with drawdown' do
         is_expected.to satisfy do |value|
-          value.compact.all?{ |d_hash| !d_hash[:loss].nil? }
+          value.compact.all? { |d_hash| !d_hash[:loss].nil? }
         end
       end
     end
