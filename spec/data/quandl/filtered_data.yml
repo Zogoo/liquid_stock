@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.quandl.com/api/v3/datasets/WIKI/AAPL.json?api_key=ywgpyUKX-va7sws8ERZp&collapse=daily&end_date=Jan%205%202018&order=desc&start_date=Jan%201%202018
+    uri: https://www.quandl.com/api/v3/datasets/WIKI/AAPL.json?api_key=ywgpyUKX-va7sws8ERZp&collapse=daily&end_date=Jan%205%202018&order=asc&start_date=Jan%201%202018
     body:
       encoding: US-ASCII
       string: ''
@@ -19,22 +19,22 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 25 Mar 2019 18:51:09 GMT
+      - Mon, 25 Mar 2019 18:56:07 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '980'
+      - '979'
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=d51a9bb7ce2a72b265c093f9720fdeba81553539868; expires=Tue, 24-Mar-20
-        18:51:08 GMT; path=/; domain=.quandl.com; HttpOnly
+      - __cfduid=d977d77ac14b4f71d0161f6be1ebf93751553540166; expires=Tue, 24-Mar-20
+        18:56:06 GMT; path=/; domain=.quandl.com; HttpOnly
       Allow:
       - GET, HEAD, POST, PUT, DELETE, OPTIONS, PATCH
       Cache-Control:
       - max-age=0, private, must-revalidate
       Etag:
-      - W/"63599caef0225be34957375fb0aa6f27"
+      - W/"d40ed1c91d1e3c5a25127678f07061f2"
       Vary:
       - Origin
       X-Content-Type-Options:
@@ -46,11 +46,11 @@ http_interactions:
       X-Ratelimit-Limit:
       - '50000'
       X-Ratelimit-Remaining:
-      - '49989'
+      - '49985'
       X-Request-Id:
-      - b1e0a3f0-f6c1-4353-8041-53d387a56a25
+      - ba2657aa-ea32-4577-82a3-2b094e7c53ee
       X-Runtime:
-      - '0.099879'
+      - '0.115441'
       X-Xss-Protection:
       - 1; mode=block
       Expect-Ct:
@@ -58,7 +58,7 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 4bd313136d8bae7b-KIX
+      - 4bd31a592d23aef3-KIX
     body:
       encoding: ASCII-8BIT
       string: '{"dataset":{"id":9775409,"dataset_code":"AAPL","database_code":"WIKI","name":"Apple
@@ -75,7 +75,7 @@ http_interactions:
         provide data where data is wrong or missing. Get involved: \u003ca href=\"mailto:connect@quandl.com\"
         rel=\"nofollow\" target=\"blank\"\u003econnect@quandl.com\u003c/a\u003e","refreshed_at":"2018-03-27T21:46:10.101Z","newest_available_date":"2018-03-27","oldest_available_date":"1980-12-12","column_names":["Date","Open","High","Low","Close","Volume","Ex-Dividend","Split
         Ratio","Adj. Open","Adj. High","Adj. Low","Adj. Close","Adj. Volume"],"frequency":"daily","type":"Time
-        Series","premium":false,"limit":null,"transform":null,"column_index":null,"start_date":"2018-01-01","end_date":"2018-01-05","data":[["2018-01-05",173.44,175.37,173.05,175.0,23016177.0,0.0,1.0,173.44,175.37,173.05,175.0,23016177.0],["2018-01-04",172.54,173.47,172.08,173.03,22211345.0,0.0,1.0,172.54,173.47,172.08,173.03,22211345.0],["2018-01-03",172.53,174.55,171.96,172.23,28819653.0,0.0,1.0,172.53,174.55,171.96,172.23,28819653.0],["2018-01-02",170.16,172.3,169.26,172.26,25048048.0,0.0,1.0,170.16,172.3,169.26,172.26,25048048.0]],"collapse":"daily","order":"desc","database_id":4922}}'
+        Series","premium":false,"limit":null,"transform":null,"column_index":null,"start_date":"2018-01-01","end_date":"2018-01-05","data":[["2018-01-02",170.16,172.3,169.26,172.26,25048048.0,0.0,1.0,170.16,172.3,169.26,172.26,25048048.0],["2018-01-03",172.53,174.55,171.96,172.23,28819653.0,0.0,1.0,172.53,174.55,171.96,172.23,28819653.0],["2018-01-04",172.54,173.47,172.08,173.03,22211345.0,0.0,1.0,172.54,173.47,172.08,173.03,22211345.0],["2018-01-05",173.44,175.37,173.05,175.0,23016177.0,0.0,1.0,173.44,175.37,173.05,175.0,23016177.0]],"collapse":"daily","order":"asc","database_id":4922}}'
     http_version: 
-  recorded_at: Mon, 25 Mar 2019 18:51:10 GMT
+  recorded_at: Mon, 25 Mar 2019 18:56:07 GMT
 recorded_with: VCR 4.0.0

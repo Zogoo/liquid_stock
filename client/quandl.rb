@@ -63,7 +63,7 @@ module Client
         START_DATE => start_date,
         END_DATE => end_date,
         PERIOD => DAILY_PERIOD,
-        ORDER_BY => DESC
+        ORDER_BY => ASC
       }
       get(stock_endpoint, opts)
     end

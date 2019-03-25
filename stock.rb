@@ -26,13 +26,13 @@ class Task
 
     # To show all first 3 drawdown
     # TODO: To avoid generate new array of portfolios
-    portfolios = stock_objects.map { |obj| [obj.open, obj.high, obj.low, obj.close] }.reverse.flatten
-    byebug
+    portfolios = stock_objects.map { |obj| [obj.open, obj.high, obj.low, obj.close] }.flatten
     drawdown_hash = Calculate::DrawDown.draw_down_hash(portfolios).compact
+    # TODO: Map DrawDown with stock object
+    byebug
     interface.show_fist_three_drawdown(drawdown_hash, stock_objects)
     max_drawdown = drawdown_hash.compact.max_by { |element| element[:loss] }
     interface.show_max_drawdown(max_drawdown, stock_objects)
-    byebug
 
     return_rate = Calculate::Rate.rate(stock_objects)
     return_value = Calculate::Rate.value(stock_objects)

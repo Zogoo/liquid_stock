@@ -11,7 +11,7 @@ module Interfaces
     end
 
     def show_stock_data(data)
-      data.reverse_each do |obj|
+      data.each do |obj|
         puts "#{obj.date}: Closed at #{obj.close} (#{obj.low} ~ #{obj.high})"
       end
       puts ''
@@ -19,9 +19,8 @@ module Interfaces
 
     def show_fist_three_drawdown(data, stock_objects)
       puts 'First 3 Drawdowns:'
-      byebug
       3.times do |count|
-        print "#{data[count][:drawdown]} "
+        print "#{data[count][:drawdown]}% "
         print "(#{data[count][:top_value]} on #{stock_objects[data[count][:top_index]].date} -> "
         print "#{data[count][:low_value]} on #{stock_objects[data[count][:low_index]].date}) \r\n"
       end
