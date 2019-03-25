@@ -58,14 +58,14 @@ RSpec.describe Calculate::DrawDown do
     end
 
     context 'when portfolios for max drawdown result with (172.3 - 169.26) / 172.3 = -1.8' do
-      let(:portfolios) {
+      let(:portfolios) do
         [
           170.16, 172.3, 169.26, 172.26,
           172.53, 174.55, 171.96, 172.23,
           172.54, 173.47, 172.08, 173.03,
           173.44, 175.37, 173.05, 175.0
         ]
-      }
+      end
 
       it 'will return value as same as contect explanation' do
         is_expected.to eq(-1.8)
@@ -73,14 +73,14 @@ RSpec.describe Calculate::DrawDown do
     end
 
     context 'when portfolios for max drawdown result with (172.53 - 172.23) / 172.53 = -0.2' do
-      let(:portfolios) {
+      let(:portfolios) do
         [
           170.16, 172.26,
           172.53, 172.23,
           172.54, 173.03,
           173.44, 175.0
         ]
-      }
+      end
 
       it 'will return value as same as contect explanation' do
         is_expected.to eq(-0.2)
@@ -144,14 +144,14 @@ RSpec.describe Calculate::DrawDown do
     end
 
     context 'when array of portfolios with 3 drawdown' do
-      let(:portfolios) {
+      let(:portfolios) do
         [
           170.16, 172.3, 169.26, 172.26,
           172.53, 174.55, 171.96, 172.23,
           172.54, 173.47, 172.08, 173.03,
           173.44, 175.37, 173.05, 175.0
         ]
-      }
+      end
 
       it 'will return array of drawdown hash' do
         is_expected.to be_a(Array)
@@ -170,14 +170,14 @@ RSpec.describe Calculate::DrawDown do
 
     # When pick up drawdown from open and close value
     context 'when array of portfolios with 1 drawdown' do
-      let(:portfolios) {
+      let(:portfolios) do
         [
           170.16, 172.26,
           172.53, 172.23,
           172.54, 173.03,
           173.44, 175.0
         ]
-      }
+      end
 
       it 'will return array of drawdown hash' do
         is_expected.to be_a(Array)

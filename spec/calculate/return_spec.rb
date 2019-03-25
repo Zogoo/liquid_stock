@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 RSpec.describe Calculate::Return do
-
   describe 'return rate' do
     let(:closed_portfolios) { [172.26, 172.23, 173.03, 175.0] }
     let(:initial_value) { closed_portfolios.first }

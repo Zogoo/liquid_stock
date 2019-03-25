@@ -29,6 +29,8 @@ module Client
     MONTHLY_PERIOD = 'monthly'.freeze
     DIFF_TRANSFORM = 'diff'.freeze
     RDIFF_TRANSFORM = 'rdiff'.freeze
+    ASC = 'asc'.freeze
+    DESC = 'desc'.freeze
 
     def initialize
       log = Logger.new(ENV['LOG_FILE_NAME'])
@@ -60,7 +62,8 @@ module Client
       opts = {
         START_DATE => start_date,
         END_DATE => end_date,
-        PERIOD => DAILY_PERIOD
+        PERIOD => DAILY_PERIOD,
+        ORDER_BY => DESC
       }
       get(stock_endpoint, opts)
     end

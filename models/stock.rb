@@ -9,7 +9,7 @@ module Models
     def self.load_from_dataset(dataset)
       column_names = dataset['dataset']['column_names']
       dataset['dataset']['data'].map do |d|
-        stock = self.new
+        stock = new
         stock.define_from_column_names(column_names)
         stock.value_from_array(column_names, d)
         stock

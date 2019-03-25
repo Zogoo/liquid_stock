@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 23 Mar 2019 16:50:43 GMT
+      - Mon, 25 Mar 2019 18:51:08 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -27,8 +27,8 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=d30d8e235295d8ea29180495e8ed7dfaf1553359843; expires=Sun, 22-Mar-20
-        16:50:43 GMT; path=/; domain=.quandl.com; HttpOnly
+      - __cfduid=db51f64e4b9ac9e03fc21796d4ea82d9d1553539867; expires=Tue, 24-Mar-20
+        18:51:07 GMT; path=/; domain=.quandl.com; HttpOnly
       Allow:
       - GET, HEAD, POST, PUT, DELETE, OPTIONS, PATCH
       Cache-Control:
@@ -46,11 +46,11 @@ http_interactions:
       X-Ratelimit-Limit:
       - '50000'
       X-Ratelimit-Remaining:
-      - '49991'
+      - '49990'
       X-Request-Id:
-      - 6c983be7-6edf-4e34-81b4-4800c2fa3b41
+      - cc8f744b-38bc-405a-b6fc-811c90465ad8
       X-Runtime:
-      - '0.107333'
+      - '0.103960'
       X-Xss-Protection:
       - 1; mode=block
       Expect-Ct:
@@ -58,11 +58,11 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 4bc1e7eb4da8af0b-KIX
+      - 4bd3130bbb99af1d-KIX
     body:
       encoding: ASCII-8BIT
       string: '{"dataset_data":{"limit":null,"transform":null,"column_index":null,"column_names":["Date","Open","High","Low","Close","Volume","Ex-Dividend","Split
         Ratio","Adj. Open","Adj. High","Adj. Low","Adj. Close","Adj. Volume"],"start_date":"2018-01-01","end_date":"2018-01-05","frequency":"daily","data":[["2018-01-05",173.44,175.37,173.05,175.0,23016177.0,0.0,1.0,173.44,175.37,173.05,175.0,23016177.0],["2018-01-04",172.54,173.47,172.08,173.03,22211345.0,0.0,1.0,172.54,173.47,172.08,173.03,22211345.0],["2018-01-03",172.53,174.55,171.96,172.23,28819653.0,0.0,1.0,172.53,174.55,171.96,172.23,28819653.0],["2018-01-02",170.16,172.3,169.26,172.26,25048048.0,0.0,1.0,170.16,172.3,169.26,172.26,25048048.0]],"collapse":null,"order":null}}'
     http_version: 
-  recorded_at: Sat, 23 Mar 2019 16:50:44 GMT
+  recorded_at: Mon, 25 Mar 2019 18:51:08 GMT
 recorded_with: VCR 4.0.0

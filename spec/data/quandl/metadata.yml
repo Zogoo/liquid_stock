@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 23 Mar 2019 16:36:55 GMT
+      - Mon, 25 Mar 2019 18:51:06 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -27,8 +27,8 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=deb18329373a51a67aae9b432b45bb3bf1553359014; expires=Sun, 22-Mar-20
-        16:36:54 GMT; path=/; domain=.quandl.com; HttpOnly
+      - __cfduid=dbeecc4b660237632592e05a817508a301553539866; expires=Tue, 24-Mar-20
+        18:51:06 GMT; path=/; domain=.quandl.com; HttpOnly
       Allow:
       - GET, HEAD, POST, PUT, DELETE, OPTIONS, PATCH
       Cache-Control:
@@ -46,11 +46,11 @@ http_interactions:
       X-Ratelimit-Limit:
       - '50000'
       X-Ratelimit-Remaining:
-      - '49996'
+      - '49991'
       X-Request-Id:
-      - 1995820a-1ae8-4ada-9ad7-0ffb33f0bcb8
+      - c4197ad2-c9d1-467e-9a60-054729b38f5c
       X-Runtime:
-      - '0.059067'
+      - '0.065832'
       X-Xss-Protection:
       - 1; mode=block
       Expect-Ct:
@@ -58,7 +58,7 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 4bc1d3b00e91ae5d-KIX
+      - 4bd31303680daee7-KIX
     body:
       encoding: ASCII-8BIT
       string: '{"dataset":{"id":9775409,"dataset_code":"AAPL","database_code":"WIKI","name":"Apple
@@ -77,5 +77,5 @@ http_interactions:
         Ratio","Adj. Open","Adj. High","Adj. Low","Adj. Close","Adj. Volume"],"frequency":"daily","type":"Time
         Series","premium":false,"database_id":4922}}'
     http_version: 
-  recorded_at: Sat, 23 Mar 2019 16:36:55 GMT
+  recorded_at: Mon, 25 Mar 2019 18:51:07 GMT
 recorded_with: VCR 4.0.0

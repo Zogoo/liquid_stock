@@ -8,7 +8,7 @@ module Calculate
       end
 
       def rate(final_value, initial_value, addition = 0)
-        final_value = final_value + addition
+        final_value += addition
         ((final_value - initial_value) / initial_value * 100).round(1)
       end
 

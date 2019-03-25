@@ -1,7 +1,6 @@
 require './spec/spec_helper.rb'
 
 RSpec.describe Client::Quandl do
-
   describe 'get stock data' do
     let(:stock_name) { 'AAPL' }
 
