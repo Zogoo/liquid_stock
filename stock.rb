@@ -24,7 +24,7 @@ class Task
     stock_objects = Models::Stock.load_from_dataset(stock_data)
 
     # To show all portfolio values
-    interface.show_stock_data(stock_objects)
+    interface.all_stock_info(stock_objects)
 
     # To show all first 3 drawdown
     # Convert portfolios for interfaces
@@ -38,15 +38,15 @@ class Task
     drawdown_hash = Calculate::DrawDown.draw_down_hash(portfolios).compact
 
     # Show first 3 data
-    interface.show_first_three_drawdown(drawdown_hash)
+    interface.first_three_drawdown(drawdown_hash)
     max_drawdown = drawdown_hash.compact.max_by { |element| element[:loss] }
 
     # Show max drawdown
-    interface.show_max_drawdown(max_drawdown)
+    interface.max_drawdown(max_drawdown)
 
     # Show return value and rate
     rate = Calculate::Return.rate_by_portfolios(stock_objects)
-    interface.show_return_value(rate)
+    interface.return_value(rate)
   rescue StandardError => e
     puts e.message
   end
