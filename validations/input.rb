@@ -1,6 +1,7 @@
 require 'date'
 
 module Validation
+  # Input validations
   class Input
     class << self
       def valid_date?(date)

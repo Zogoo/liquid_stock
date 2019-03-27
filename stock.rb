@@ -11,6 +11,8 @@ Dir['./calculate/*.rb'].each { |file| require file }
 Dir['./models/*.rb'].each { |file| require file }
 Dir['./validations/*.rb'].each { |file| require file }
 
+# Command line task for show stock info
+# as same as requirement
 class Task
   def self.show_info(arguments)
     interface = Interfaces::Cmd.new(arguments)
@@ -25,18 +27,26 @@ class Task
     interface.show_stock_data(stock_objects)
 
     # To show all first 3 drawdown
-    # TODO: To avoid generate new array of portfolios
-    portfolios = stock_objects.map { |obj| [obj.open, obj.high, obj.low, obj.close] }.flatten
+    # Convert portfolios for interfaces
+    portfolios = []
+    stock_objects.each do |item|
+      portfolios << { item.date => item.open }
+      portfolios << { item.date => item.high }
+      portfolios << { item.date => item.low }
+      portfolios << { item.date => item.close }
+    end
     drawdown_hash = Calculate::DrawDown.draw_down_hash(portfolios).compact
-    # TODO: Map DrawDown with stock object
-    byebug
-    interface.show_fist_three_drawdown(drawdown_hash, stock_objects)
-    max_drawdown = drawdown_hash.compact.max_by { |element| element[:loss] }
-    interface.show_max_drawdown(max_drawdown, stock_objects)
 
-    return_rate = Calculate::Rate.rate(stock_objects)
-    return_value = Calculate::Rate.value(stock_objects)
-    interface.show_return_value(rate_value, return_rate)
+    # Show first 3 data
+    interface.show_first_three_drawdown(drawdown_hash)
+    max_drawdown = drawdown_hash.compact.max_by { |element| element[:loss] }
+
+    # Show max drawdown
+    interface.show_max_drawdown(max_drawdown)
+
+    # Show return value and rate
+    rate = Calculate::Return.rate_by_portfolios(stock_objects)
+    interface.show_return_value(rate)
   rescue StandardError => e
     puts e.message
   end

@@ -5,6 +5,7 @@ require 'logger'
 require 'byebug'
 
 module Client
+  # Quandl client for retrieve portfolios
   class Quandl
     attr_accessor :connection
 

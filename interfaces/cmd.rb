@@ -1,44 +1,35 @@
 module Interfaces
-  class Cmd
-    attr_accessor :stock_name, :start_date, :end_date
-
-    def initialize(opts)
-      self.stock_name = opts.first
-      date_seperator_index = opts.index('-')
-      self.start_date = opts.slice(1, date_seperator_index - 1).join(' ')
-      self.end_date = opts.slice(date_seperator_index + 1, opts.size - 1).join(' ')
-      validate
-    end
-
-    def show_stock_data(data)
-      data.each do |obj|
+  # Command line interface handler
+  class Cmd < Base
+    def show_stock_data(stock_objects)
+      stock_objects.each do |obj|
         puts "#{obj.date}: Closed at #{obj.close} (#{obj.low} ~ #{obj.high})"
       end
       puts ''
     end
 
-    def show_fist_three_drawdown(data, stock_objects)
+    def show_first_three_drawdown(data)
       puts 'First 3 Drawdowns:'
       3.times do |count|
         print "#{data[count][:drawdown]}% "
-        print "(#{data[count][:top_value]} on #{stock_objects[data[count][:top_index]].date} -> "
-        print "#{data[count][:low_value]} on #{stock_objects[data[count][:low_index]].date}) \r\n"
+        print "(#{data[count][:top_value]} on #{data[count][:top_date]} -> "
+        print "#{data[count][:low_value]} on #{data[count][:low_date]}) \r\n"
       end
       puts ''
     end
 
     def show_max_drawdown(data)
       print "Maximum drawdown: #{data[:drawdown]}% "
-      print "(#{data[:top_value]} on #{stock_objects[data[count][:top_index]].date} -> "
-      print "#{data[:low_value]} on #{stock_objects[data[count][:low_index]].date}) \r\n"
+      print "(#{data[:top_value]} on #{data[:top_date]} -> "
+      print "#{data[:low_value]} on #{data[:low_date]}) \r\n"
       puts ''
     end
 
     def show_return_value(data)
-      print "Return: #{data.return_value}"
-      print "[+#{data.return_rate}]"
-      print "(#{data.first.close} on #{data.first.date} -> "
-      print "#{data.last.close} on #{data.last.date}) \r\n"
+      print "Return: #{data[:value]}"
+      print "[+#{data[:rate]}]"
+      print "(#{data[:initial_value]} on #{data[:initial_date]} -> "
+      print "#{data[:final_value]} on #{data[:final_date]}) \r\n"
       puts ''
     end
 

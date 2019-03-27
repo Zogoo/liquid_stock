@@ -1,4 +1,5 @@
 module Models
+  # Quandl API base model
   class Base
     def define_from_column_names(column_names)
       column_names.each do |field|
@@ -12,6 +13,9 @@ module Models
       end
     end
 
+    # Quandl response column_name convert to instance variable name
+    # Quandl API column_names seperator are
+    # dot(.) hyphens (-) and space.
     def to_snakecase(field)
       field.split(/\.|\-|\ /).reject(&:empty?).join.snakecase
     end
