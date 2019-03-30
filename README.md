@@ -2,6 +2,8 @@
 
 This script will give you stock information, max drawdown and rate of return by your entered date range.
 
+[![Build Status](https://travis-ci.org/Zogoo/liquid_stock.png)](https://travis-ci.org/Zogoo/liquid_stock.png)
+[![Coverage Status](https://coveralls.io/repos/github/Zogoo/liquid_stock/badge.svg?branch=master)](https://coveralls.io/github/Zogoo/liquid_stock?branch=master)
 
 # How to use
 

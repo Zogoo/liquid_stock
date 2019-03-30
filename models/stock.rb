@@ -1,3 +1,5 @@
+require './models/base'
+
 module Models
   # Quandl API Stock model
   class Stock < Base

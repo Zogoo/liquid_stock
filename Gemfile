@@ -7,6 +7,7 @@ gem 'pry'
 gem 'byebug'
 gem 'faraday'
 gem 'slack-notifier'
+gem 'coveralls', require: false
 
 group :test do
   gem 'factory_bot'
