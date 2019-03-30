@@ -13,16 +13,20 @@ Dir['./validations/*.rb'].each { |file| require file }
 # as same as requirement
 class Task
   def self.show_info(arguments)
-    interface = Interfaces::Cmd.new(arguments)
+    # Notification channels
+    command_line = Interfaces::Cmd.new(arguments)
+    slack_notification = Interfaces::SlackNotify.new
+
     stock_data = Client::Quandl.new.filter_by_date(
-      interface.stock_name,
-      interface.start_date,
-      interface.end_date
+      command_line.stock_name,
+      command_line.start_date,
+      command_line.end_date
     )
     stock_objects = Models::Stock.load_from_dataset(stock_data)
 
     # To show all portfolio values
-    interface.all_stock_info(stock_objects)
+    command_line.all_stock_info(stock_objects)
+    slack_notification.all_stock_info(stock_objects)
 
     # To show all first 3 drawdown
     # Convert portfolios for interfaces
@@ -36,15 +40,18 @@ class Task
     drawdown_hash = Calculate::DrawDown.draw_down_hash(portfolios).compact
 
     # Show first 3 data
-    interface.first_three_drawdown(drawdown_hash)
-    max_drawdown = drawdown_hash.compact.max_by { |element| element[:loss] }
+    command_line.first_three_drawdown(drawdown_hash)
+    slack_notification.first_three_drawdown(drawdown_hash)
 
     # Show max drawdown
-    interface.max_drawdown(max_drawdown)
+    max_drawdown = drawdown_hash.compact.max_by { |element| element[:loss] }
+    command_line.max_drawdown(max_drawdown)
+    slack_notification.max_drawdown(max_drawdown)
 
     # Show return value and rate
     rate = Calculate::Return.rate_by_portfolios(stock_objects)
-    interface.return_value(rate)
+    command_line.return_value(rate)
+    slack_notification.return_value(max_drawdown)
   rescue StandardError => e
     puts e.message
   end

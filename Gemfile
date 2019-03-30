@@ -2,11 +2,11 @@
 source 'https://rubygems.org'
 
 # ruby '2.5.3'
-gem 'activemodel'
 gem 'dotenv'
 gem 'pry'
 gem 'byebug'
 gem 'faraday'
+gem 'slack-notifier'
 
 group :test do
   gem 'factory_bot'

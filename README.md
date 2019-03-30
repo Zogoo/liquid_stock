@@ -1,11 +1,11 @@
 # Stock information
 
-This script will show to you stock informations, max drawdown and rate of return by give date.
+This script will give you stock information, max drawdown and rate of return by your entered date range.
 
 
 # How to use
 
-1. Create .env and .env.test file
+###### 1. Create .env and .env.test file with following env variables
 
 ```
   STOCK_HOST='https://www.quandl.com'
@@ -13,18 +13,31 @@ This script will show to you stock informations, max drawdown and rate of return
   DATABASE_CODE='WIKI'
   API_KEY='YOUR API KEY'
   LOG_FILE_NAME='faraday.log'
+  SLACK_HOOK_URL=''
+  SLACK_CHANNEL='test'
+  SLACK_USERNAME='LiquidStock'
 ```
 
-2. Call with following options
+To get the SLACK_HOOK_URL you need:
+
+  * Go to https://slack.com/apps/A0F7XDUAZ-incoming-webhooks
+  * Choose your team, press "Configure"
+  * In configurations press "Add configuration"
+  * Choose channel, press "Add Incoming WebHooks integration"
+
+To get the API KEY you need:
+
+  * Quandl API KEY. You need to register your account from here https://www.quandl.com/sign-up-modal
+  * They will send you API KEY to your email address
+
+###### 2. Call with following options
 
 ```
  API_KEY=<your key> ./stock.rb STOCK_NAME START_DATE - END_DATE
 
 ```
 
- API_KEY: Quandl API KEY. You need register you account from here https://www.quandl.com/sign-up-modal
-
- And you can put in to env file or provide it on command line.
+ API_KEY: You can put in to env file or provide it on the command line.
 
  STOCK_NAME: Official stock name. For example: Nike -> NKE, MacDonalds -> MCE, Apple Inc -> AAPL
 
@@ -32,7 +45,7 @@ This script will show to you stock informations, max drawdown and rate of return
 
  Note: Between start date and end date, please provide hyphen.
 
-3. Samples:
+###### 3. Samples:
 
 #### Apple
 
@@ -85,7 +98,11 @@ First 3 Drawdowns:
 Maximum drawdown: -1.7% (63.66 on 2018-01-03 -> 62.55 on 2018-01-04)
 ```
 
+Slack notification
+
+![alt tag](https://docs.google.com/uc?id=1QWic9lKrLD62DXuN62kRFBuBEqH7kjyj)
+
 # TODO
 
 1. Spec test for edge cases
-2. Performance test and update logic
+2. Performance test and update logics for performance
