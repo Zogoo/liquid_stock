@@ -34,7 +34,7 @@ module Calculate
 
         portfolios.each_with_index do |p_hash, index|
           p_hash.each do |date, item|
-            if item >= portfolios[top_index].values.first
+            if item > portfolios[top_index].values.first
               top_index = index
               top_date = date
               bottom_index = index
